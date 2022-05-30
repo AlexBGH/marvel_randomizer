@@ -7,6 +7,7 @@ import { MarvelHomeComponent } from './marvel-home/marvel-home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServicesComponent } from './services/services.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,14 @@ import { ServicesComponent } from './services/services.component';
     MarvelHomeComponent,
     HeaderComponent,
     FooterComponent,
-    ServicesComponent
+    ServicesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ServicesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
