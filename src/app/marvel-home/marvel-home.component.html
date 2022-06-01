@@ -1,8 +1,109 @@
 <body>
+    <form #numberOfPlayersForm="ngForm" (ngSubmit)="onSubmitForm(numberOfPlayersForm)">
+        <label for="numberOfPlayersInput">Selectionnez le nombre de joueurs !</label>
+        <input id="numberOfPlayersInput" name="numberOfPlayersChoice" type="numberOfPlayersChoice" [(ngModel)]=numberOfPlayersChoice>
+        <button>OK</button>
+    </form>
+
+    <div>
+
+        <div class="randomizer" *ngIf="numberOfPlayersChoice == 1">
+            <div class="player">
+                <p>Joueur 1</p>
+                <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode1}}.png'>
+                <p *ngIf="attribut1 === 'Agression'" class="agression">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Commandement'" class="commandement">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Justice'" class="justice">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Protection'" class="protection">{{attribut1}}</p>
+            </div>
+        </div>    
+        <div class="randomizer" *ngIf="numberOfPlayersChoice == 2">
+            <div class="player">
+                <p>Joueur 1</p>
+                <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode1}}.png'>
+                <p *ngIf="attribut1 === 'Agression'" class="agression">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Commandement'" class="commandement">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Justice'" class="justice">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Protection'" class="protection">{{attribut1}}</p>
+            </div>
+            <div class="player">
+                <p>Joueur 2</p>
+                <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode2}}.png'>
+                <p *ngIf="attribut2 === 'Agression'" class="agression">{{attribut2}}</p>
+                <p *ngIf="attribut2 === 'Commandement'" class="commandement">{{attribut2}}</p>
+                <p *ngIf="attribut2 === 'Justice'" class="justice">{{attribut2}}</p>
+                <p *ngIf="attribut2 === 'Protection'" class="protection">{{attribut2}}</p>
+            </div>
+        </div> 
+        <div class="randomizer" *ngIf="numberOfPlayersChoice == 3">
+            <div class="player">
+                <p>Joueur 1</p>
+                <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode1}}.png'>
+                <p *ngIf="attribut1 === 'Agression'" class="agression">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Commandement'" class="commandement">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Justice'" class="justice">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Protection'" class="protection">{{attribut1}}</p>
+            </div>
+            <div class="player">
+                <p>Joueur 2</p>
+                <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode2}}.png'>
+                <p *ngIf="attribut2 === 'Agression'" class="agression">{{attribut2}}</p>
+                <p *ngIf="attribut2 === 'Commandement'" class="commandement">{{attribut2}}</p>
+                <p *ngIf="attribut2 === 'Justice'" class="justice">{{attribut2}}</p>
+                <p *ngIf="attribut2 === 'Protection'" class="protection">{{attribut2}}</p>
+            </div>
+            <div class="player">
+                <p>Joueur 3</p>
+                <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode3}}.png'>
+                <p *ngIf="attribut3 === 'Agression'" class="agression">{{attribut3}}</p>
+                <p *ngIf="attribut3 === 'Commandement'" class="commandement">{{attribut3}}</p>
+                <p *ngIf="attribut3 === 'Justice'" class="justice">{{attribut3}}</p>
+                <p *ngIf="attribut3 === 'Protection'" class="protection">{{attribut3}}</p>
+            </div>
+        </div> 
+        <div class="randomizer" *ngIf="numberOfPlayersChoice == 4">
+            <div class="player">
+                <p>Joueur 1</p>
+                <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode1}}.png'>
+                <p *ngIf="attribut1 === 'Agression'" class="agression">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Commandement'" class="commandement">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Justice'" class="justice">{{attribut1}}</p>
+                <p *ngIf="attribut1 === 'Protection'" class="protection">{{attribut1}}</p>
+            </div>
+            <div class="player">
+                <p>Joueur 2</p>
+                <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode2}}.png'>
+                <p *ngIf="attribut2 === 'Agression'" class="agression">{{attribut2}}</p>
+                <p *ngIf="attribut2 === 'Commandement'" class="commandement">{{attribut2}}</p>
+                <p *ngIf="attribut2 === 'Justice'" class="justice">{{attribut2}}</p>
+                <p *ngIf="attribut2 === 'Protection'" class="protection">{{attribut2}}</p>
+            </div>
+            <div class="player">
+                <p>Joueur 3</p>
+                <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode3}}.png'>
+                <p *ngIf="attribut3 === 'Agression'" class="agression">{{attribut3}}</p>
+                <p *ngIf="attribut3 === 'Commandement'" class="commandement">{{attribut3}}</p>
+                <p *ngIf="attribut3 === 'Justice'" class="justice">{{attribut3}}</p>
+                <p *ngIf="attribut3 === 'Protection'" class="protection">{{attribut3}}</p>
+            </div>
+            <div class="player">
+                <p>Joueur 4</p>
+                <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode4}}.png'>
+                <p *ngIf="attribut4 === 'Agression'" class="agression">{{attribut4}}</p>
+                <p *ngIf="attribut4 === 'Commandement'" class="commandement">{{attribut4}}</p>
+                <p *ngIf="attribut4 === 'Justice'" class="justice">{{attribut4}}</p>
+                <p *ngIf="attribut4 === 'Protection'" class="protection">{{attribut4}}</p>
+            </div>
+        </div> 
+    </div>
+
     <div *ngFor="let card of cards; index as i">
-        <div *ngIf="cards[i].type_code === 'hero'">
+        <div *ngIf="cards[i].type_code === 'vilain'">
             <img src= 'https://marvelcdb.com{{cards[i].imagesrc}}'>
         </div>
+    </div>
+    <div>
+        {{cards | json}}
     </div>
 </body>
 

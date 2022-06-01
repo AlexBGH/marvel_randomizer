@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
+import { Cards } from '../services/cards';
 
 @Component({
   selector: 'app-services',
@@ -12,6 +13,8 @@ import { Observable, throwError } from 'rxjs';
 @Injectable()
 
 export class ServicesComponent implements OnInit {
+  cards!: Cards[];
+  heroesCards!: Cards[];
 
   constructor(private http: HttpClient) { }
 
