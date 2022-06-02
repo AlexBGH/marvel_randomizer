@@ -33,20 +33,21 @@ export class MarvelHomeComponent implements OnInit {
   expertChoice!: any;
   expertChoiceValidator!: any;
   expertRandom!: any;
+  attributSpecial: any;
 
   code = [
-    '01001a', 
+    /*'01001a', 
     '01010a', 
     '01019a', 
     '01029a', 
     '01040a', 
     '03001a', 
-    '04001a', 
+    '04001a',*/ 
     '04031a', 
     '05001a', 
     '06001a', 
     '08001a', 
-    '09001a',
+    /*'09001a',
     '10001a',
     '12001a',
     '13001a',
@@ -60,27 +61,27 @@ export class MarvelHomeComponent implements OnInit {
     '20001a',
     '21001a',
     '21031a',
-    '22001a',
+    /*'22001a',
     '23001a',
     '25001a',
     '26001a',
     '27001a',
     '27030a',
     '28001a',
-    '29001a'
+    '29001a'*/
   ]
   
   villainCode = [
-    '01094', 
-    '01113',
-    '01134',
-    '02014',
-    '07002',
-    '21071',
-    '21092',
-    '21111',
-    '21136a',
-    '21161'
+    'https://marvelcdb.com/bundles/cards/01094.png', 
+    'https://marvelcdb.com/bundles/cards/01113.png',
+    'https://marvelcdb.com/bundles/cards/01134.png',
+    'https://marvelcdb.com/bundles/cards/02014.png',
+    'https://marvelcdb.com/bundles/cards/07002.png',
+    'https://marvelcdb.com/bundles/cards/21071.png',
+    'https://marvelcdb.com/bundles/cards/21092.png',
+    'https://marvelcdb.com/bundles/cards/21111.png',
+    'https://marvelcdb.com/bundles/cards/21136a.png',
+    'https://marvelcdb.com/bundles/cards/21161.png'
   ]
   
   attributs = [
@@ -88,6 +89,15 @@ export class MarvelHomeComponent implements OnInit {
     'Justice', 
     'Commandement', 
     'Protection'
+  ]
+
+  specialAttributs = [
+    'Agress / Just',
+    'Agress / Comm',
+    'Agress / Prot',
+    'Comm / Just',
+    'Comm / Prot',
+    'Prot / Just'
   ]
 
   expert = [
@@ -157,5 +167,6 @@ export class MarvelHomeComponent implements OnInit {
     this.attribut2 = this.attributs[Math.floor(Math.random()*this.attributs.length)]
     this.attribut3 = this.attributs[Math.floor(Math.random()*this.attributs.length)]
     this.attribut4 = this.attributs[Math.floor(Math.random()*this.attributs.length)]
+    this.attributSpecial = this.specialAttributs[Math.floor(Math.random()*this.specialAttributs.length)]
   }
 }

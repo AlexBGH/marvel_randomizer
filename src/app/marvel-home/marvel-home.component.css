@@ -106,3 +106,31 @@ h3 {
 .standard {
     background-color: rgb(180, 180, 180);
 }
+
+.special {
+    background-color: bisque;
+}
+
+.twoColorAJ {
+    background: linear-gradient(0.25turn, rgb(232, 100, 100), #eea561, yellow);
+}
+
+.twoColorAC {
+    background: linear-gradient(0.25turn, rgb(232, 100, 100), #d78ef0, cyan);
+}
+
+.twoColorAP {
+    background: linear-gradient(0.25turn, rgb(232, 100, 100), #d9ee61, greenyellow);
+}
+
+.twoColorCJ {
+    background: linear-gradient(0.25turn, cyan, #a7ef9f, yellow);
+}
+
+.twoColorCP {
+    background: linear-gradient(0.25turn, cyan, #84ee61, greenyellow);
+}
+
+.twoColorPJ {
+    background: linear-gradient(0.25turn, greenyellow, #bfee61, yellow);
+}

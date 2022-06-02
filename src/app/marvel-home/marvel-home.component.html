@@ -1,5 +1,5 @@
 <body>
-    <div class="center">
+    <div>
         <h3>Nombre de Joueurs:</h3>
         <form #numberOfPlayersForm="ngForm" (ngSubmit)="onSubmitForm(numberOfPlayersForm)">
             <div class="selectors">
@@ -34,94 +34,214 @@
                 <div class="player">
                     <p>Joueur 1</p>
                     <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode1}}.png'>
-                    <p *ngIf="attribut1 === 'Agression'" class="agression">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Commandement'" class="commandement">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Justice'" class="justice">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Protection'" class="protection">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Agression' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="agression">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Commandement' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="commandement">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Justice' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="justice">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Protection' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="protection">{{attribut1}}</p>
+                    <p *ngIf="heroCode1 == '21031a'" class="special">Spécial</p>
+                    <p *ngIf="heroCode1 == '04031a'" [ngClass]="attributSpecial === specialAttributs[0] ? 
+                    'twoColorAJ' : 
+                    attributSpecial === specialAttributs[1] ? 
+                    'twoColorAC' : 
+                    attributSpecial === specialAttributs[2] ? 
+                    'twoColorAP' : 
+                    attributSpecial === specialAttributs[3] ? 
+                    'twoColorCJ' : 
+                    attributSpecial === specialAttributs[4] ? 
+                    'twoColorCP' : 
+                    'twoColorPJ'">{{attributSpecial}}</p>
                 </div>
             </div>    
             <div class="randomizer" *ngIf="numberOfPlayers == 2">
                 <div class="player">
                     <p>Joueur 1</p>
                     <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode1}}.png'>
-                    <p *ngIf="attribut1 === 'Agression'" class="agression">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Commandement'" class="commandement">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Justice'" class="justice">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Protection'" class="protection">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Agression' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="agression">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Commandement' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="commandement">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Justice' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="justice">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Protection' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="protection">{{attribut1}}</p>
+                    <p *ngIf="heroCode1 == '21031a'" class="special">Spécial</p>
+                    <p *ngIf="heroCode1 == '04031a'" [ngClass]="attributSpecial === specialAttributs[0] ? 
+                    'twoColorAJ' : 
+                    attributSpecial === specialAttributs[1] ? 
+                    'twoColorAC' : 
+                    attributSpecial === specialAttributs[2] ? 
+                    'twoColorAP' : 
+                    attributSpecial === specialAttributs[3] ? 
+                    'twoColorCJ' : 
+                    attributSpecial === specialAttributs[4] ? 
+                    'twoColorCP' : 
+                    'twoColorPJ'">{{attributSpecial}}</p>
                 </div>
                 <div class="player">
                     <p>Joueur 2</p>
                     <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode2}}.png'>
-                    <p *ngIf="attribut2 === 'Agression'" class="agression">{{attribut2}}</p>
-                    <p *ngIf="attribut2 === 'Commandement'" class="commandement">{{attribut2}}</p>
-                    <p *ngIf="attribut2 === 'Justice'" class="justice">{{attribut2}}</p>
-                    <p *ngIf="attribut2 === 'Protection'" class="protection">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Agression' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="agression">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Commandement' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="commandement">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Justice' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="justice">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Protection' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="protection">{{attribut2}}</p>
+                    <p *ngIf="heroCode2 == '21031a'" class="special">Spécial</p>
+                    <p *ngIf="heroCode2 == '04031a'" [ngClass]="attributSpecial === specialAttributs[0] ? 
+                    'twoColorAJ' : 
+                    attributSpecial === specialAttributs[1] ? 
+                    'twoColorAC' : 
+                    attributSpecial === specialAttributs[2] ? 
+                    'twoColorAP' : 
+                    attributSpecial === specialAttributs[3] ? 
+                    'twoColorCJ' : 
+                    attributSpecial === specialAttributs[4] ? 
+                    'twoColorCP' : 
+                    'twoColorPJ'">{{attributSpecial}}</p>
                 </div>
             </div> 
             <div class="randomizer" *ngIf="numberOfPlayers == 3">
                 <div class="player">
                     <p>Joueur 1</p>
                     <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode1}}.png'>
-                    <p *ngIf="attribut1 === 'Agression'" class="agression">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Commandement'" class="commandement">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Justice'" class="justice">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Protection'" class="protection">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Agression' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="agression">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Commandement' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="commandement">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Justice' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="justice">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Protection' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="protection">{{attribut1}}</p>
+                    <p *ngIf="heroCode1 == '21031a'" class="special">Spécial</p>
+                    <p *ngIf="heroCode1 == '04031a'" [ngClass]="attributSpecial === specialAttributs[0] ? 
+                    'twoColorAJ' : 
+                    attributSpecial === specialAttributs[1] ? 
+                    'twoColorAC' : 
+                    attributSpecial === specialAttributs[2] ? 
+                    'twoColorAP' : 
+                    attributSpecial === specialAttributs[3] ? 
+                    'twoColorCJ' : 
+                    attributSpecial === specialAttributs[4] ? 
+                    'twoColorCP' : 
+                    'twoColorPJ'">{{attributSpecial}}</p>
                 </div>
                 <div class="player">
                     <p>Joueur 2</p>
                     <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode2}}.png'>
-                    <p *ngIf="attribut2 === 'Agression'" class="agression">{{attribut2}}</p>
-                    <p *ngIf="attribut2 === 'Commandement'" class="commandement">{{attribut2}}</p>
-                    <p *ngIf="attribut2 === 'Justice'" class="justice">{{attribut2}}</p>
-                    <p *ngIf="attribut2 === 'Protection'" class="protection">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Agression' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="agression">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Commandement' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="commandement">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Justice' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="justice">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Protection' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="protection">{{attribut2}}</p>                   
+                    <p *ngIf="heroCode2 == '21031a'" class="special">Spécial</p>
+                    <p *ngIf="heroCode2 == '04031a'" [ngClass]="attributSpecial === specialAttributs[0] ? 
+                    'twoColorAJ' : 
+                    attributSpecial === specialAttributs[1] ? 
+                    'twoColorAC' : 
+                    attributSpecial === specialAttributs[2] ? 
+                    'twoColorAP' : 
+                    attributSpecial === specialAttributs[3] ? 
+                    'twoColorCJ' : 
+                    attributSpecial === specialAttributs[4] ? 
+                    'twoColorCP' : 
+                    'twoColorPJ'">{{attributSpecial}}</p>
                 </div>
                 <div class="player">
                     <p>Joueur 3</p>
                     <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode3}}.png'>
-                    <p *ngIf="attribut3 === 'Agression'" class="agression">{{attribut3}}</p>
-                    <p *ngIf="attribut3 === 'Commandement'" class="commandement">{{attribut3}}</p>
-                    <p *ngIf="attribut3 === 'Justice'" class="justice">{{attribut3}}</p>
-                    <p *ngIf="attribut3 === 'Protection'" class="protection">{{attribut3}}</p>
+                    <p *ngIf="attribut3 === 'Agression' && heroCode3 !== '21031a' && heroCode3 !== '04031a'" class="agression">{{attribut3}}</p>
+                    <p *ngIf="attribut3 === 'Commandement' && heroCode3 !== '21031a' && heroCode3 !== '04031a'" class="commandement">{{attribut3}}</p>
+                    <p *ngIf="attribut3 === 'Justice' && heroCode3 !== '21031a' && heroCode3 !== '04031a'" class="justice">{{attribut3}}</p>
+                    <p *ngIf="attribut3 === 'Protection' && heroCode3 !== '21031a' && heroCode3 !== '04031a'" class="protection">{{attribut3}}</p>
+                    <p *ngIf="heroCode3 == '21031a'" class="special">Spécial</p>
+                    <p *ngIf="heroCode3 == '04031a'" [ngClass]="attributSpecial === specialAttributs[0] ? 
+                    'twoColorAJ' : 
+                    attributSpecial === specialAttributs[1] ? 
+                    'twoColorAC' : 
+                    attributSpecial === specialAttributs[2] ? 
+                    'twoColorAP' : 
+                    attributSpecial === specialAttributs[3] ? 
+                    'twoColorCJ' : 
+                    attributSpecial === specialAttributs[4] ? 
+                    'twoColorCP' : 
+                    'twoColorPJ'">{{attributSpecial}}</p>
                 </div>
             </div> 
             <div class="randomizer" *ngIf="numberOfPlayers == 4">
                 <div class="player">
                     <p>Joueur 1</p>
                     <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode1}}.png'>
-                    <p *ngIf="attribut1 === 'Agression'" class="agression">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Commandement'" class="commandement">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Justice'" class="justice">{{attribut1}}</p>
-                    <p *ngIf="attribut1 === 'Protection'" class="protection">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Agression' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="agression">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Commandement' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="commandement">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Justice' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="justice">{{attribut1}}</p>
+                    <p *ngIf="attribut1 === 'Protection' && heroCode1 !== '21031a' && heroCode1 !== '04031a'" class="protection">{{attribut1}}</p>
+                    <p *ngIf="heroCode1 == '21031a'" class="special">Spécial</p>
+                    <p *ngIf="heroCode1 == '04031a'" [ngClass]="attributSpecial === specialAttributs[0] ? 
+                    'twoColorAJ' : 
+                    attributSpecial === specialAttributs[1] ? 
+                    'twoColorAC' : 
+                    attributSpecial === specialAttributs[2] ? 
+                    'twoColorAP' : 
+                    attributSpecial === specialAttributs[3] ? 
+                    'twoColorCJ' : 
+                    attributSpecial === specialAttributs[4] ? 
+                    'twoColorCP' : 
+                    'twoColorPJ'">{{attributSpecial}}</p>
                 </div>
                 <div class="player">
                     <p>Joueur 2</p>
                     <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode2}}.png'>
-                    <p *ngIf="attribut2 === 'Agression'" class="agression">{{attribut2}}</p>
-                    <p *ngIf="attribut2 === 'Commandement'" class="commandement">{{attribut2}}</p>
-                    <p *ngIf="attribut2 === 'Justice'" class="justice">{{attribut2}}</p>
-                    <p *ngIf="attribut2 === 'Protection'" class="protection">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Agression' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="agression">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Commandement' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="commandement">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Justice' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="justice">{{attribut2}}</p>
+                    <p *ngIf="attribut2 === 'Protection' && heroCode2 !== '21031a' && heroCode2 !== '04031a'" class="protection">{{attribut2}}</p>
+                    <p *ngIf="heroCode2 == '21031a'" class="special">Spécial</p>
+                    <p *ngIf="heroCode2 == '04031a'" [ngClass]="attributSpecial === specialAttributs[0] ? 
+                    'twoColorAJ' : 
+                    attributSpecial === specialAttributs[1] ? 
+                    'twoColorAC' : 
+                    attributSpecial === specialAttributs[2] ? 
+                    'twoColorAP' : 
+                    attributSpecial === specialAttributs[3] ? 
+                    'twoColorCJ' : 
+                    attributSpecial === specialAttributs[4] ? 
+                    'twoColorCP' : 
+                    'twoColorPJ'">{{attributSpecial}}</p>
                 </div>
                 <div class="player">
                     <p>Joueur 3</p>
                     <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode3}}.png'>
-                    <p *ngIf="attribut3 === 'Agression'" class="agression">{{attribut3}}</p>
-                    <p *ngIf="attribut3 === 'Commandement'" class="commandement">{{attribut3}}</p>
-                    <p *ngIf="attribut3 === 'Justice'" class="justice">{{attribut3}}</p>
-                    <p *ngIf="attribut3 === 'Protection'" class="protection">{{attribut3}}</p>
+                    <p *ngIf="attribut3 === 'Agression' && heroCode3 !== '21031a' && heroCode3 !== '04031a'" class="agression">{{attribut3}}</p>
+                    <p *ngIf="attribut3 === 'Commandement' && heroCode3 !== '21031a' && heroCode3 !== '04031a'" class="commandement">{{attribut3}}</p>
+                    <p *ngIf="attribut3 === 'Justice' && heroCode3 !== '21031a' && heroCode3 !== '04031a'" class="justice">{{attribut3}}</p>
+                    <p *ngIf="attribut3 === 'Protection' && heroCode3 !== '21031a' && heroCode3 !== '04031a'" class="protection">{{attribut3}}</p>
+                    <p *ngIf="heroCode3 == '21031a'" class="special">Spécial</p>
+                    <p *ngIf="heroCode3 == '04031a'" [ngClass]="attributSpecial === specialAttributs[0] ? 
+                    'twoColorAJ' : 
+                    attributSpecial === specialAttributs[1] ? 
+                    'twoColorAC' : 
+                    attributSpecial === specialAttributs[2] ? 
+                    'twoColorAP' : 
+                    attributSpecial === specialAttributs[3] ? 
+                    'twoColorCJ' : 
+                    attributSpecial === specialAttributs[4] ? 
+                    'twoColorCP' : 
+                    'twoColorPJ'">{{attributSpecial}}</p>
                 </div>
                 <div class="player">
                     <p>Joueur 4</p>
                     <img src= 'https://marvelcdb.com/bundles/cards/{{heroCode4}}.png'>
-                    <p *ngIf="attribut4 === 'Agression'" class="agression">{{attribut4}}</p>
-                    <p *ngIf="attribut4 === 'Commandement'" class="commandement">{{attribut4}}</p>
-                    <p *ngIf="attribut4 === 'Justice'" class="justice">{{attribut4}}</p>
-                    <p *ngIf="attribut4 === 'Protection'" class="protection">{{attribut4}}</p>
+                    <p *ngIf="attribut4 === 'Agression'  && heroCode4 !== '21031a' && heroCode4 !== '04031a'" class="agression">{{attribut4}}</p>
+                    <p *ngIf="attribut4 === 'Commandement'  && heroCode4 !== '21031a' && heroCode4 !== '04031a'" class="commandement">{{attribut4}}</p>
+                    <p *ngIf="attribut4 === 'Justice'  && heroCode4 !== '21031a' && heroCode4 !== '04031a'" class="justice">{{attribut4}}</p>
+                    <p *ngIf="attribut4 === 'Protection'  && heroCode4 !== '21031a' && heroCode4 !== '04031a'" class="protection">{{attribut4}}</p>
+                    <p *ngIf="heroCode4 == '21031a'" class="special">Spécial</p>
+                    <p *ngIf="heroCode4 == '04031a'" [ngClass]="attributSpecial === specialAttributs[0] ? 
+                    'twoColorAJ' : 
+                    attributSpecial === specialAttributs[1] ? 
+                    'twoColorAC' : 
+                    attributSpecial === specialAttributs[2] ? 
+                    'twoColorAP' : 
+                    attributSpecial === specialAttributs[3] ? 
+                    'twoColorCJ' : 
+                    attributSpecial === specialAttributs[4] ? 
+                    'twoColorCP' : 
+                    'twoColorPJ'">{{attributSpecial}}</p>
                 </div>
             </div> 
             <div class="randomizer">
                 <div class="player" *ngIf="villainChoiceValidator == 'true'">
                     <p class="villain">Villain</p>
-                    <img src= 'https://marvelcdb.com/bundles/cards/{{villain}}.png'>
+                    <img src= '{{villain}}'>
                 </div>
                 <div class="player" *ngIf="expertChoiceValidator == 'true'">
                     <p class="villain" class="expert" *ngIf="expertRandom == 'https://marvelcdb.com/bundles/cards/01191.png'">Expert</p>
