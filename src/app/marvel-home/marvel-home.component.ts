@@ -11,13 +11,14 @@ import { NgForm } from '@angular/forms';
 
 export class MarvelHomeComponent implements OnInit {
 
-  numberOfPlayersChoice!: 1 | 2 | 3 | 4;
+  numberOfPlayersChoice!: any;
 
   constructor(private _services: ServicesComponent) { 
   }
 
   cards!: Cards[];
   i!: number;
+  numberOfPlayers!: number;
   heroCode1!: any;
   heroCode2!: any;
   heroCode3!: any;
@@ -26,6 +27,12 @@ export class MarvelHomeComponent implements OnInit {
   attribut2!: any;
   attribut3!: any;
   attribut4!: any;
+  villain!: any;
+  villainChoice!: any;
+  villainChoiceValidator!: any;
+  expertChoice!: any;
+  expertChoiceValidator!: any;
+  expertRandom!: any;
 
   code = [
     '01001a', 
@@ -62,7 +69,20 @@ export class MarvelHomeComponent implements OnInit {
     '28001a',
     '29001a'
   ]
-
+  
+  villainCode = [
+    '01094', 
+    '01113',
+    '01134',
+    '02014',
+    '07002',
+    '21071',
+    '21092',
+    '21111',
+    '21136a',
+    '21161'
+  ]
+  
   attributs = [
     'Agression', 
     'Justice', 
@@ -70,9 +90,16 @@ export class MarvelHomeComponent implements OnInit {
     'Protection'
   ]
 
+  expert = [
+    'https://marvelcdb.com/bundles/cards/01191.png',
+    'https://marvelcdb.com/bundles/cards/01186.jpg'
+,  ]
+
   async ngOnInit(): Promise<void> {
     
-    this.numberOfPlayersChoice = 1;
+    this.numberOfPlayersChoice = "";
+    this.villainChoice = "";
+    this.expertChoice = "";
 
     this._services.getAllCards()
     .subscribe(
@@ -80,31 +107,6 @@ export class MarvelHomeComponent implements OnInit {
         this.cards = data;
       }
     )
-
-    this.attribut1 = this.attributs[Math.floor(Math.random()*this.attributs.length)]
-    this.attribut2 = this.attributs[Math.floor(Math.random()*this.attributs.length)]
-    this.attribut3 = this.attributs[Math.floor(Math.random()*this.attributs.length)]
-    this.attribut4 = this.attributs[Math.floor(Math.random()*this.attributs.length)]
-    
-    this.heroCode1 = this.code[Math.floor(Math.random()*this.code.length)]
-
-    this.heroCode2 = this.code[Math.floor(Math.random()*this.code.length)]
-    while (this.heroCode2 === this.heroCode1)
-    {
-      this.heroCode2 = Math.floor(Math.random()*this.code.length);
-    }
-
-    this.heroCode3 = this.code[Math.floor(Math.random()*this.code.length)]
-    while (this.heroCode3 === this.heroCode1 || this.heroCode3 === this.heroCode2)
-    {
-      this.heroCode3 = Math.floor(Math.random()*this.code.length);
-    }
-
-    this.heroCode4 = this.code[Math.floor(Math.random()*this.code.length)]
-    while (this.heroCode4 === this.heroCode1 || this.heroCode4 === this.heroCode2 || this.heroCode4 === this.heroCode3)
-    {
-      this.heroCode4 = Math.floor(Math.random()*this.code.length);
-    }
 
     this._services.getAllCards()
     .subscribe(
@@ -115,27 +117,41 @@ export class MarvelHomeComponent implements OnInit {
   }
 
   onSubmitForm(form: NgForm) {
-    this.numberOfPlayersChoice = form.value.numberOfPlayersChoice;
+
+    this.villain = this.villainCode[Math.floor(Math.random()*this.villainCode.length)]
+    
+    this.expertRandom = this.expert[Math.floor(Math.random()*this.expert.length)]
+
+    this.numberOfPlayers = form.value.numberOfPlayersChoice;
+
+    this.villainChoiceValidator = this.villainChoice;
+
+    this.expertChoiceValidator = this.expertChoice;
 
     this.heroCode1 = this.code[Math.floor(Math.random()*this.code.length)]
+    let index1 = this.code.indexOf(this.heroCode1)
+    if (index1 !== -1) {
+      this.code.splice(index1, 1);
+    }
    
     this.heroCode2 = this.code[Math.floor(Math.random()*this.code.length)]
-    while (this.heroCode2 === this.heroCode1)
-    {
-      this.heroCode2 = Math.floor(Math.random()*this.code.length);
+    let index2 = this.code.indexOf(this.heroCode2)
+    if (index2 !== -1) {
+      this.code.splice(index2, 1);
     }
     
     this.heroCode3 = this.code[Math.floor(Math.random()*this.code.length)]
-    while (this.heroCode3 === this.heroCode1 || this.heroCode3 === this.heroCode2)
-    {
-      this.heroCode3 = Math.floor(Math.random()*this.code.length);
+    let index3 = this.code.indexOf(this.heroCode3)
+    if (index3 !== -1) {
+      this.code.splice(index3, 1);
     }
     
     this.heroCode4 = this.code[Math.floor(Math.random()*this.code.length)]
-    while (this.heroCode4 === this.heroCode1 || this.heroCode4 === this.heroCode2 || this.heroCode4 === this.heroCode3)
-    {
-      this.heroCode4 = Math.floor(Math.random()*this.code.length);
-    }
+
+    this.code.push(this.heroCode1)
+    this.code.push(this.heroCode2)
+    this.code.push(this.heroCode3)
+
 
     this.attribut1 = this.attributs[Math.floor(Math.random()*this.attributs.length)]
     this.attribut2 = this.attributs[Math.floor(Math.random()*this.attributs.length)]
