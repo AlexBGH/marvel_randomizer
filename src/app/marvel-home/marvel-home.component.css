@@ -2,7 +2,7 @@ body {
     margin-top: -0.2px;
     margin-bottom: -0.2px;
     margin-left: -0.2px;
-    height: 1400px;
+    height: 1600px;
     width: 100%;
     background-image: 
     linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
@@ -14,6 +14,11 @@ body {
     align-items: center;
     font-family: cursive;
     font-weight: bold;
+}
+
+select {
+    width: 250px;
+    background-color: #f1ffed;
 }
 
 form{
@@ -89,8 +94,13 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
-    width: 30px;
+    height: 40px;
+    width: 100px;
+    text-transform: uppercase;
+    font-family: cursive;
+    font-weight: bold;
+    background: linear-gradient(10deg, rgb(232, 100, 100), yellow, greenyellow, cyan);
+    color: black;
 }
 
 h3 {
@@ -100,7 +110,7 @@ h3 {
 }
 
 .expert {
-    background-color: rgb(185, 45, 45);
+    background: linear-gradient(45deg, red, rgb(232, 100, 100), red);
 }
 
 .standard {
@@ -108,7 +118,7 @@ h3 {
 }
 
 .special {
-    background-color: bisque;
+    background: linear-gradient(45deg, rgb(232, 100, 100), yellow, greenyellow, cyan);
 }
 
 .twoColorAJ {
@@ -133,4 +143,17 @@ h3 {
 
 .twoColorPJ {
     background: linear-gradient(0.25turn, greenyellow, #bfee61, yellow);
+}
+
+.betweenChoice {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.playerCenterSelect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
